@@ -5,9 +5,6 @@ const items = [
     'go to dinner',
 ]
 
-//const mappedItems = items.map(item => <div> <input type='checkbox'/> 
-//<span> {item} </span></div>)
-
 const TodoList = () => {
     return(
         <div>
