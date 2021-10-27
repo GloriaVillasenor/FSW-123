@@ -3,6 +3,7 @@ import TodoList from './TodoList'
 import TodoForm from './TodoForm'
 import './App.css';
 import { todoObj } from './Store'
+import { v4 as uuidv4 } from "uuid"
 
 function App() {
 
@@ -23,18 +24,28 @@ function App() {
   }
 
   const addTodo = text => {
-
+     const newTodos = [
+       ...todos,
+       {
+        id: uuidv4(),
+        text: text,
+        isCompleted: false 
+       }
+     ]
+     setTodos(newTodos)
   }
 
   return (
     <div className="App">
       <h1>Todo App</h1>
-      <TodoForm />
+      <TodoForm
+        addTodo={addTodo}
+      />
       <TodoList 
         todos={todos} 
         completeTodo={completeTodo}
         deleteTodo={deleteTodo}
-        addTodo={addTodo} />
+         />
     </div>
   );
 }
