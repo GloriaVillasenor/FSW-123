@@ -1,19 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchBar from './components/SearchBar';
+import App from './App'
 
-class App extends React.Component {
-  handleTermChange(term) {
-    console.log(term);
-  }
-
-  render() {
-    return (
-      <div>
-        <SearchBar onTermChange={this.handleTermChange} />
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('root'));
